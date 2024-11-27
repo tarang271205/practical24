@@ -1,0 +1,42 @@
+Program: 24 Write a C program to create a structure of Book Detail and display the details of the 
+book in appropriate format by passing structure as a function argument. 
+Book Detail must contain following information: 
+Book Title, Author name and Amount of book in float. 
+Code: #include <stdio.h> 
+#include <string.h> 
+ 
+// Define a structure to store book details 
+struct BookDetail { 
+    char title[50]; 
+    char author[50]; 
+    float price; 
+}; 
+// Function to display book details 
+void displayBookDetails(struct BookDetail book,int choice) { 
+    printf("\nBook Details:\n"); 
+    printf("Title: %s\n", book.title); 
+    printf("Author: %s\n", book.author); 
+    printf("Price: %.2f rs\n", book.price); 
+} 
+int main() { 
+    struct BookDetail book; 
+    int choice; 
+ 
+    // taking book detail from user. 
+    printf("Enter the book title: "); 
+    fgets(book.title, sizeof(book.title), stdin); 
+    book.title[strcspn(book.title, "\n")] = '\0'; // Remove trailing newline 
+ 
+ 
+ 
+    printf("Enter the author's name: "); 
+    fgets(book.author, sizeof(book.author), stdin); 
+    book.author[strcspn(book.author, "\n")] = '\0'; // Remove trailing newline 
+ 
+    printf("Enter the price of the book: "); 
+    scanf("%f", &book.price); 
+ 
+    displayBookDetails(book , choice); 
+  printf("\n24ce032_TARANG");
+     return 0; 
+} 
